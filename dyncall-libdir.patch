@@ -1,0 +1,33 @@
+--- dyncall-1.1/dyncall/CMakeLists.txt.orig	2020-01-11 22:29:16.000000000 +0100
++++ dyncall-1.1/dyncall/CMakeLists.txt	2020-04-29 21:20:03.363282806 +0200
+@@ -38,7 +38,7 @@
+   dyncall_callf.c
+ )
+ 
+-install(TARGETS dyncall_s ARCHIVE DESTINATION lib )
++install(TARGETS dyncall_s ARCHIVE DESTINATION lib${LIB_SUFFIX} )
+ 
+ install(FILES 
+   dyncall_macros.h 
+--- dyncall-1.1/dyncallback/CMakeLists.txt.orig	2020-01-11 22:29:16.000000000 +0100
++++ dyncall-1.1/dyncallback/CMakeLists.txt	2020-04-29 21:20:21.934245493 +0200
+@@ -38,7 +38,7 @@
+   dyncall_callback.c
+ )
+ 
+-install(TARGETS dyncallback_s ARCHIVE DESTINATION lib )
++install(TARGETS dyncallback_s ARCHIVE DESTINATION lib${LIB_SUFFIX} )
+ 
+ install(FILES
+   dyncall_thunk.h
+--- dyncall-1.1/dynload/CMakeLists.txt.orig	2020-01-11 22:29:16.000000000 +0100
++++ dyncall-1.1/dynload/CMakeLists.txt	2020-04-29 21:20:34.954920462 +0200
+@@ -19,7 +19,7 @@
+ #
+ 
+ add_library(dynload_s STATIC dynload.c dynload_syms.c)
+-install(TARGETS dynload_s ARCHIVE DESTINATION lib)
++install(TARGETS dynload_s ARCHIVE DESTINATION lib${LIB_SUFFIX})
+ install(FILES dynload.h DESTINATION include)
+ 
+ 

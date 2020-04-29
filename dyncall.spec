@@ -12,7 +12,7 @@ Group:		Libraries
 #Source0Download: https://dyncall.org/download
 Source0:	https://dyncall.org/r%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	db7dab95f721dc1c0c513a7e4ab28345
-#Patch0:	%{name}-what.patch
+Patch0:		%{name}-libdir.patch
 URL:		https://dyncall.org/
 BuildRequires:	cmake >= 2.6
 %if %{with doc}
@@ -60,6 +60,7 @@ Dokumentacja bibliotek dyncall.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 install -d build
