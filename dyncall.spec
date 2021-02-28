@@ -48,9 +48,7 @@ Obejmuje trzy niezależne komponenty, dostępne jako biblioteki C:
 Summary:	Documentation for dyncall libraries
 Summary(pl.UTF-8):	Dokumentacja bibliotek dyncall
 Group:		Documentation
-%if "%{_rpmversion}" >= "4.6"
 BuildArch:	noarch
-%endif
 
 %description doc
 Documentation for dyncall libraries.
