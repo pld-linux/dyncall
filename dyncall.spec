@@ -20,6 +20,8 @@ BuildRequires:	cmake >= 2.6
 %if %{with doc}
 BuildRequires:	texlive-format-pdflatex
 BuildRequires:	texlive-latex
+# colortbl.sty
+BuildRequires:	texlive-latex-extend
 BuildRequires:	texlive-latex-moreverb
 # for html
 #BuildRequires:	texlive-tex4ht
