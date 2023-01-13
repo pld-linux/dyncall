@@ -17,6 +17,7 @@ Patch0:		%{name}-libdir.patch
 Patch1:		%{name}-cmake.patch
 URL:		https://dyncall.org/
 BuildRequires:	cmake >= 2.6
+BuildRequires:	rpm-build >= 4.6
 %if %{with doc}
 BuildRequires:	texlive-format-pdflatex
 BuildRequires:	texlive-latex
@@ -28,6 +29,8 @@ BuildRequires:	texlive-latex-moreverb
 %endif
 ExclusiveArch:	%{ix86} %{x8664} x32 %{arm} aarch64 ia64 mips mips64 ppc ppc64 sh sparc sparcv9 sparc64
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_debugsource_packages	0
 
 %description
 dyncall is a low-level toolkit providing a portable abstraction for
