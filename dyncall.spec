@@ -5,16 +5,14 @@
 Summary:	A Generic Dynamic FFI package
 Summary(pl.UTF-8):	Ogólny pakiet do dynamicznych wywołań obcych funkcji (FFI)
 Name:		dyncall
-Version:	1.3
+Version:	1.4
 Release:	1
 License:	MIT
 Group:		Libraries
 #Source0Download: https://dyncall.org/download
 Source0:	https://dyncall.org/r%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	4f96a2f86aae116f84ee7db01b164d41
+# Source0-md5:	3a82364439b9e0ca5477677823421c1f
 Patch0:		%{name}-libdir.patch
-# https://dyncall.org/pub/dyncall/dyncall/raw-rev/1e65b8911603
-Patch1:		%{name}-cmake.patch
 URL:		https://dyncall.org/
 BuildRequires:	cmake >= 2.6
 BuildRequires:	rpm-build >= 4.6
@@ -30,7 +28,7 @@ BuildRequires:	texlive-latex-moreverb
 ExclusiveArch:	%{ix86} %{x8664} x32 %{arm} aarch64 ia64 mips mips64 ppc ppc64 sh sparc sparcv9 sparc64
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_debugsource_packages	0
+%undefine	_debugsource_packages
 
 %description
 dyncall is a low-level toolkit providing a portable abstraction for
@@ -66,7 +64,6 @@ Dokumentacja bibliotek dyncall.
 %prep
 %setup -q
 %patch -P0 -p1
-%patch -P1 -p1
 
 %build
 install -d build
